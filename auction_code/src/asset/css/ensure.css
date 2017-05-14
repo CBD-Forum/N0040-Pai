@@ -1,0 +1,56 @@
+.main {
+  position: relative;
+  background: #ffffff;
+  min-height: 1000px;
+}
+
+.deal-title{
+  border-bottom: 2px solid black;margin-top:20px;
+}
+.contract-content{
+  height: 500px;
+  overflow-y: auto;
+}
+.contract-content p{
+  margin: 3px auto;
+  word-wrap:break-word;
+  word-break: break-all;
+  text-wrap:normal;
+  line-height: 30px;
+}
+.order-footer{
+  margin: 10px auto; border-bottom: 1px solid #ccc;
+}
+.order-item{
+  height: 50px;
+  line-height: 50px;
+}
+.order-item-label{
+  color:#999;
+}
+.name-area{
+  display: inline-block;
+  border:1px solid #ccc;
+  width: 138px ;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 20px;
+
+}
+.add-selected{
+  border:2px solid #ca262f;
+  background-image: url("../img/ensure/selected.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+.add-hover{
+  background-color: #eee;
+}
+
+
+

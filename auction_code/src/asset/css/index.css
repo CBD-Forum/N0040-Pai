@@ -1,0 +1,263 @@
+@charset "utf-8";
+@import url(../fonts/iconfont.css);
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Microsoft YaHei', 'Arial';
+
+}
+
+body {
+  background-color: #eceeee;
+  /*background: url(../img/body-bg.jpg) repeat;*/
+  text-align: left;
+}
+
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li, dt, dl, dd {
+  text-decoration: none;
+  list-style: none;
+  vertical-align: middle;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #373737;
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+  color: #373737;
+  cursor: pointer;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+img {
+  border: none;
+}
+
+label {
+  font-weight: normal;
+}
+
+.main-panel {
+  text-align: center;
+  width: 1180px;
+  margin: 0 auto;
+  margin-top: 106px;
+}
+
+.header {
+  height: 103px; /*75px*/
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 4px solid #a60000;
+}
+
+.header .top {
+  height: 29px;
+  color: black;
+  position: relative;
+  width: 100%;
+  /* background-color: #dbdbdb;*/
+
+}
+
+.header .top .top_nav {
+  float: right;
+  display: inline;
+  text-align: right;
+  height: 29px;
+  width: 100%;
+  font-size: 12px;
+  margin: 0;
+  padding-right: 50px;
+
+}
+
+.header .top .top_nav li {
+  line-height: 29px;
+  font-size: 12px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.header .top .top_nav li.ns {
+  margin: 0 13px;
+  width: 1px;
+  height: 29px;
+  background: url("../img/top_s.gif") center center no-repeat;
+}
+
+.header .webNav {
+  background-color: #fff;
+  width: 1180px;
+  margin: 0 auto;
+  height: 70px; /*42px*/
+  line-height: 70px;
+  color: black;
+}
+
+.header .webNav .logo {
+  float: left;
+  width: 200px;
+  margin: 0 0;
+  text-align: left;
+  background-size: 400px;
+  display: inline-block;
+}
+
+.header .webNav .logo .page-title {
+  display: none;
+  font-size: 20px;
+  padding-left: 6px;
+  height: 100%;
+  line-height: 100%;
+}
+
+.header .webNav ul {
+  width: 700px;
+  color: #666;
+
+}
+
+.header .webNav ul li {
+  float: left;
+  height: 100%;
+  width: 100px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.header .webNav ul li a {
+  font-size: 16px;
+  padding: 0 10px;
+  display: block;
+  float: left;
+}
+
+.header .webNav ul li.selected a {
+  color: #0296c8;
+}
+
+.footer {
+  background: #F2F2F2;
+  border-top: 1px solid #E3E3E3;
+  margin-top: 5px;
+  color: #B6B6B6;
+  width: 100%;
+  height: 100px;
+  clear: both;
+}
+
+.footer .copyRight {
+  line-height: 40px;
+  text-align: center;
+  clear: both;
+  color: #808080;
+}
+
+.default-margin {
+  margin: 10px auto;
+}
+
+.auction-img-normal {
+  width: auto;
+  max-width: 100%;
+  height: 300px;
+  margin: auto;
+  display: block;
+}
+
+.disabled {
+  background-color: #999 !important;
+}
+
+.msg-wrap {
+  min-height: 23px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: auto !important;
+}
+
+.msg-error {
+  position: relative;
+  background: #ffebeb;
+  color: #e4393c;
+  border: 1px solid #faccc6;
+  padding: 3px 10px 3px 40px;
+  line-height: 15px;
+  width: 304px;
+  height: auto;
+}
+
+.vertical-parent {
+  display: flex;
+  align-items: center; /*纵轴居中*/
+}
+
+.horizon-parent {
+  display: flex;
+  justify-content: center; /*横轴居中*/
+}
+
+.vertical-child {
+  box-sizing: border-box;
+  align-self: center; /*向行中间位置对齐*/
+}
+
+.modal-bgd{
+  display: block;;
+  background: #FFFFFF; filter:alpha(opacity=30); -moz-opacity:0.3; opacity:0.3;
+}
+.modal-dialog-bgd{
+  z-index: 2000;
+  background-color: white !important;
+  color: black !important;
+  filter:alpha(opacity=100);
+  -moz-opacity:1;
+  opacity:1;
+}
+.radio,
+.checkbox{
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-metro {
+  background-color: #a56322;
+  color: white;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0;padding: 0;
+}
+.btn-metro:hover {
+  background-color: #a06e3b;
+}
+.btn-action{
+  cursor: pointer;
+  color:  #015fa7;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+{
+  "author": {
+    "name": "Tim Caswell",
+    "email": "tim@creationix.com"
+  },
+  "name": "jsondb",
+  "description": "A disk-based json database for node",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "jsondb.js",
+  "engines": {
+    "node": ">0.6"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "_id": "jsondb@0.0.0",
+  "dist": {
+    "shasum": "0649c6053cc0aa6e926d4d0d0e5ee45a0aa95928"
+  },
+  "_from": "jsondb@",
+  "_resolved": "https://registry.npmjs.org/jsondb/-/jsondb-0.0.0.tgz"
+}

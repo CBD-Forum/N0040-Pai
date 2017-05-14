@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "text-encoding": "github:nozzlegear/text-encoding.d.ts"
+  },
+  "globalDependencies": {
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#c8a69b0b0c71cc00d4ada94a4420fb037b3cc9cd",
+    "require": "registry:dt/require#2.1.20+20160919185614"
+  }
+}

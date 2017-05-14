@@ -1,0 +1,79 @@
+<div class="row default-margin">
+  <div class="col-md-6 text-left default-margin">
+    <img id="current-auction-img" class="auction-img-normal"/>
+  </div>
+  <div class="col-md-6 text-left default-margin">
+    <div id="bid" class="row default-margin">
+      <h1 id="bid-title" class="ni_title"></h1>
+    </div>
+    <div class="row default-margin" style="margin: 10px auto;">
+      <div class="auction-left auction-status auction-status-mark-over" id="auction-status">
+        竞拍结束
+      </div>
+      <div class="auction-status">
+        <span class="auction-status-desc" id="left-time">距离结束仅剩:
+          <font color="#a56322">00</font>天
+          <font color="#a56322">00</font>时
+          <font color="#a56322">00</font>分
+          <font color="#a56322">00</font>秒
+        </span>
+        <span class="auction-status-desc">
+          <font color="#a56322" id="bid-count">10</font>人参与竞拍&nbsp;&nbsp;&nbsp;&nbsp;
+          <font color="#a56322" id="bid-total-count">25</font>次围观
+        </span>
+      </div>
+    </div>
+
+    <div class="row default-margin vertical-parent">
+      <div class="col-md-7 text-left vertical-child">
+        <div class="row default-margin" id="my-auction-price">
+          <div class="auction-left">我的竞价:</div>
+          <div class="auction-price" id="current-price" style="font-size: 20px;">¥ 0.00</div>
+          <div class="auction-times">出价<font color="#a56322" id="auction-times">0</font>次</div>
+        </div>
+        <div class="row default-margin" id="my-ensure-price">
+          <div class="auction-left">保&nbsp;&nbsp;证&nbsp;&nbsp;金:</div>
+          <div class="auction-price" id="ensure-price" style="font-size: 20px;">¥ 100.00</div>
+          <div class="auction-times">不成拍则结束后退还</div>
+        </div>
+        <div class="row default-margin">
+          <div class="auction-left">起&nbsp;&nbsp;拍&nbsp;&nbsp;价:</div>
+          <div class="auction-price" id="base-price">¥ 1500.00</div>
+        </div>
+        <div class="row default-margin">
+          <div class="auction-left">加价幅度:</div>
+          <div class="auction-price" id="fix-add-price">¥ 80.00</div>
+        </div>
+        <div class="row default-margin" style="margin-top: 10px;">
+          <div class="auction-left">竞拍周期:</div>
+          <div class="auction-block" id="auction-circle">5分钟/次</div>
+        </div>
+      </div>
+
+      <div class="col-md-5 text-left vertical-child">
+        <div id="countdown" class="row default-margin ">
+          <div class="row" id='tiles'>
+            <span>0</span>
+            <span>00</span>
+            <span>00</span>
+            <span>00</span>
+          </div>
+          <div class="row labels" style="margin-top: 10px">
+            <li>轮</li>
+            <li>时</li>
+            <li>分</li>
+            <li>秒</li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" row default-margin
+          " style="margin: 10px auto;">
+      <input type="button" class="btn-bid " value="" />
+    </div>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,86 @@
+<% var title = 'Index Page' %>
+<% include head %>
+<%
+    var hasLogin = (typeof(user) != 'undefined' && user != null);
+%>
+    <table style="width: 100%;">
+        <tr style="width: 100%;height: 20px;">
+            <td style="width: 100%;">
+                <table style="width: 100%;">
+                    <tr style="width: 100%;text-align: right;">
+                        <td style="text-align: left;">
+                        </td>
+                        <td style="width: 200px;">
+                            <% if(hasLogin){ %>
+                            你好 <%= user.name %>
+                            <a href="/logout">退出</a>
+                            <% }else{ %>
+                            <a href="/login">登陆</a>
+                            <a href="/register">注册</a>
+                            <% } %>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" class="introduce">
+                <div class="text">
+                    <h2>抽奖介绍：</h2>
+                    <p>页面显示抽奖信息和活动规则，“抽奖”按钮呈现浅色无法按动。</p>
+                    <p>请登录后点击“抽奖”按钮，完成一键抽奖。</p>
+                    <p>抽奖资格共100名，额满为止，按时间先后顺序自动生成兑奖数字（1~100）。</p>
+                    <p>超过截止时间即停止参与抽奖。</p>
+                    <p>抽奖完成后，可以实时查看全部参与抽奖者信息，包括ID、兑奖号、时间等。</p>
+                    <p>在抽奖页面提前公示中奖数字产生办法（当周某事件……）和兑奖办法。</p>
+                    <p>中奖数字产生后，兑奖号显示中奖与否的信息，以及开始兑奖时间信息。</p>
+                </div>
+            </td>
+        </tr>
+        <tr class="drawDiv">
+            <td align="center">
+                <%
+                    var lotteried = history.lotteried;
+                    if(!hasLogin || lotteried){
+                %>
+                    <div class="lotteried"></div>
+                <%
+                    }else{
+                %>
+                        <div class="button" onmouseover="xvis.html.showHandCursor();" onmouseout="xvis.html.hideHandCursor();" onclick="location.href='/api?action=doLottery';"></div>
+                <%
+                    }
+                %>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" class="introduce">
+                <div class="text">
+                    <h2>当前参与抽奖用户列表：</h2>
+                    <table clas"list">
+                        <%
+                            if(history){
+                                var list = history.list;
+                                for(var i = 0; i < list.length; i ++){
+                                    var item = list[i];
+                        %>
+                                    <tr <%=(item.lucky ? "class=lucky" : "")%>>
+                                        <td>-</td>
+                                        <td><%=item.user%></td>
+                                        <td>&nbsp;&nbsp;</td>
+                                        <td><%=item.date%></td>
+                                        <td>&nbsp;&nbsp;</td>
+                                        <td><%=(item.current ? "" + user.name : "")%></td>
+                                        <td>&nbsp;&nbsp;</td>
+                                        <td><%=(item.lucky ? "恭喜" + (item.current ? '你' : '') + ",中奖了" : "")%></td>
+                                    </tr>
+                        <%
+                                }
+                            }
+                        %>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+<% include foot %>

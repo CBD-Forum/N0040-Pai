@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>区块链杂货铺-请选择支付方式</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./asset/icon/favicon-32x32.png">
+</head>
+
+<body style="overflow-y: scroll;">
+<header class="header">
+
+</header>
+
+<main class="main-panel main">
+  <div class="row default-margin" style="height: 50px;line-height: 50px; font-size: 16px;">
+    <div id="order-id" class="col-md-6" style="font-weight: bold;">
+
+    </div>
+    <div class="col-md-6">
+      应付金额<font id="pay-money" color="red"></font>元
+    </div>
+  </div>
+
+  <div class="row default-margin text-left payment" style="margin: auto 20px;">
+    <div class="row default-margin vertical-parent">
+      <span style="font-size: 36px;color: #a56322;" class="vertical-child">
+         <label class="glyphicon glyphicon-flag"></label>
+          第三方支付
+       </span>
+      <span style="margin-left: 10px;" class="vertical-child">以下支付方式不支持合并支付</span>
+    </div>
+    <br>
+    <div id="payments" class="row default-margin" style="font-size: 20px;color:#5e5e5e;padding-left: 50px;">
+      <a href="javascript:void(0);" id="weixinpay">
+        微信支付
+      </a>
+      <span style="margin: auto 10px;">|</span>
+      <a href="javascript:void(0);">
+        支付宝支付(敬请期待)
+      </a>
+    </div>
+    <div class="row default-margin text-center" style="text-align: center !important;">
+      <div class="row default-margin text-center" id="qrcode"
+           style="text-align: center !important; width: 256px;height: 256px;"></div>
+    </div>
+  </div>
+
+  <div class="row default-margin text-left payment" style="margin: 20px 20px;">
+    <div class="row default-margin vertical-parent">
+      <span style="font-size: 36px;color: #a56322;" class="vertical-child">
+         <label class="glyphicon glyphicon-flag"></label>
+          余额支付
+       </span>
+    </div>
+    <br>
+    <div  class="row " style="font-size: 20px;color:#5e5e5e;padding-left: 50px;">
+      <div class="col-md-3">
+        <input type="password" id="pay-pwd" class="form-control" placeholder="请输入登录密码" style="margin: 10px auto;"/>
+        <input type="button" id="quick-payment" class="btn btn-primary form-control" value="确&nbsp;&nbsp;  定" style="margin: 10px auto;">
+      </div>
+    </div>
+  </div>
+
+</main>
+<footer class="footer">
+</footer>
+<script type="text/javascript" src="./asset/js/qrcode.min.js"></script>
+</body>
+</html>
+
+

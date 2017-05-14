@@ -1,0 +1,189 @@
+<% var title = '注册页面' %>
+<% include head %>
+<h1>注册</h1>
+<form method="post" action="/register" style="width: 800px;">
+    <table>
+        <tr>
+            <td>
+                <label>用户:</label>
+            </td>
+            <td>
+                <input type="text" name="username" id="user">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+                <% if(typeof errorString != 'undefined' && errorString != null) { %>
+                <span style="color:red;"><%= errorString %></span>
+                <% } %>
+                <span id="userDiv"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>密码:</label>
+            </td>
+            <td>
+                <input type="password" name="password" id="pwd">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input type="password" name="confirmedPassword" id="cpwd">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+                <span id="pwdDiv"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>邮箱:</label>
+            </td>
+            <td>
+                <input type="text" name="email" id="email">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+                <span id="emailDiv"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>手机:</label>
+            </td>
+            <td>
+                <input type="text" name="phone" id="phone">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+                <span id="phoneDiv"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>邀请码:</label>
+            </td>
+            <td>
+                <input type="text" name="code" id="code">
+            </td>
+            <td>
+                <span style="color: red">*</span>
+                <span id="codeDiv"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input id="register" type="submit" disabled value="注册">
+            </td>
+            <td>
+                <script type="text/javascript" charset="utf-8">
+                    var pu = xvis.id('user');
+                    var puv = xvis.id('userDiv');
+
+                    var userPass = false;
+                    var passPass = false;
+                    var emailPass = false;
+                    var phonePass = false;
+                    var codePass = false;
+
+                    var updateStatus = function () {
+                        var pr = xvis.id('register');
+                        pr.disabled = !(userPass && passPass && emailPass && phonePass && codePass);
+                    };
+
+                    var fnu = function (e) {
+                        if (pu.value == null || pu.value == '') {
+                            puv.innerHTML = '<span style="color:red;">用户名不能为空</span>';
+                            userPass = false;
+                        } else {
+                            puv.innerHTML = '';
+                            userPass = true;
+                        }
+                        updateStatus();
+                    };
+                    xvis.addEventListener(pu, 'blur', fnu);
+
+                    var p = xvis.id('pwd');
+                    var cp = xvis.id('cpwd');
+                    var pv = xvis.id('pwdDiv');
+
+                    var fnpassword = function (e) {
+                        if (p.value != null && p.value != '') {
+                            if (cp.value != p.value) {
+                                pv.innerHTML = '<span style="color:red;">密码不一致</span>';
+                                passPass = false;
+                            } else {
+                                pv.innerHTML = '';
+                                passPass = true;
+                            }
+                        } else {
+                            pv.innerHTML = '<span style="color:red;">密码不能为空</span>';
+                            passPass = false;
+                        }
+                        updateStatus();
+                    };
+                    xvis.addEventListener(p, 'blur', fnpassword);
+                    xvis.addEventListener(cp, 'change', fnpassword);
+                    xvis.addEventListener(cp, 'blur', fnpassword);
+
+                    var ep = xvis.id('email');
+                    var epv = xvis.id('emailDiv');
+                    var fnemail = function (e) {
+                        if (ep.value != null && ep.value != '') {
+                            epv.innerHTML = '';
+                            emailPass = true;
+                        } else {
+                            epv.innerHTML = '<span style="color:red;">邮箱不能为空</span>';
+                            emailPass = false;
+                        }
+                        updateStatus();
+                    };
+                    xvis.addEventListener(ep, 'blur', fnemail);
+                    xvis.addEventListener(ep, 'change', fnemail);
+
+                    var pp = xvis.id('phone');
+                    var ppv = xvis.id('phoneDiv');
+                    var fnphone = function (e) {
+                        if (pp.value != null && pp.value != '') {
+                            ppv.innerHTML = '';
+                            phonePass = true;
+                        } else {
+                            ppv.innerHTML = '<span style="color:red;">手机不能为空</span>';
+                            phonePass = false;
+                        }
+                    };
+                    xvis.addEventListener(pp, 'blur', fnphone);
+                    xvis.addEventListener(pp, 'change', fnphone);
+
+                    var dp = xvis.id('code');
+                    var dpv = xvis.id('codeDiv');
+                    var fncode = function (e) {
+                        if (dp.value != null && dp.value != '') {
+                            dpv.innerHTML = '';
+                            codePass = true;
+                        } else {
+                            dpv.innerHTML = '<span style="color:red;">缴请码不能为空</span>';
+                            codePass = false;
+                        }
+                        updateStatus();
+                    };
+                    xvis.addEventListener(dp, 'onchange', fncode);
+                    xvis.addEventListener(dp, 'blur', fncode);
+                    xvis.addEventListener(dp, 'change', fncode);
+                    xvis.addEventListener(dp, 'input', fncode);
+                    xvis.addEventListener(dp, 'propertychange', fncode);
+                </script>
+            </td>
+        </tr>
+    </table>
+</form>
+<% include foot %>

@@ -1,0 +1,175 @@
+@charset "utf-8";
+body {
+  overflow-y: hidden;
+  background-color: white;
+  background: url(../img/body-bg-white.jpg) repeat;
+}
+
+header .welcome {
+  width: 300px;
+  text-align: right;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  margin-top: 78px;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  z-index: 0;
+}
+
+.login-header {
+
+}
+
+.login-bg {
+  width: 100%;
+  height: 500px;
+  background: url("../img/login/index_bg.jpg");
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+}
+.login-form {
+  z-index: 4;
+  background: #fff;
+  overflow: visible;
+  width: 346px;
+  color: #4b4b4b;
+  position: absolute;
+  right: 55px;
+  top: 55px;
+}
+.login-form .login-box {
+ /* width: 306px;*/
+  padding: 20px;
+
+}
+
+.ul_type {
+  height: 40px;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.ul_type li.cur {
+  color: #52b1f3;
+  border-top: 5px solid #52b1f3;
+}
+
+.ul_type li {
+  width: 49.99%;
+  margin-bottom: 0px;
+  background-color: #fff;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "微软雅黑";
+  float: left;
+  border-top: 5px solid #fff;
+}
+
+
+.mc{
+  overflow: visible;
+}
+.form .item {
+  position: relative;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+.form .item-fore1, .form .item-fore2 {
+  border: 1px solid #bdbdbd;
+  height: 38px;
+  width: 304px;
+}
+.form .item-fore5{
+  text-align: center;
+  width: 304px;
+}
+.form .item .login-label {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border-right: 1px solid #bdbdbd;
+}
+.form .item .login-name-label{
+  background: url("../img/login/login-name.jpg") no-repeat;
+}
+.form .item .login-pwd-label{
+  background: url("../img/login/login-pwd.png") no-repeat;
+}
+
+.form .item .name-label {
+  background-position: 0 0;
+}
+
+.form .itxt {
+  line-height: 36px;
+  height: 36px;
+  border: 0;
+  padding: 10px 0 10px 50px;
+  width: 254px;
+  float: none;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: '\5b8b\4f53';
+}
+.form .itxt:focus{
+  outline: none;
+}
+.detailed_type {
+  background-color: #FFF;
+  overflow: hidden;
+  padding: 10px 0 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.formType {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: #52b1f3;
+  float: left;
+  margin: 3px 0;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 12px 0;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+}
+.btn-entry{
+  color: #FFF;
+}
+.btn-entry:link{
+  color: #FFF;
+}
+
+.quick-login {
+  width: 16px;
+  height: 16px;
+  margin: 0;padding: 0;
+  line-height: 16px;
+  text-align: center;
+  display: inline-block;
+}
+.icon-jingtum{
+  background: url("../img/login/jingtum.png");
+  margin: 0 3px;
+}
+.icon-weixin{
+  background: url("../img/login/wechat.png");
+  margin: 0 3px;
+}

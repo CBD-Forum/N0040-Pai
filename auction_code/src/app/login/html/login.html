@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>用户登录</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./asset/icon/favicon-32x32.png">
+</head>
+<body>
+<header class="header">
+
+</header>
+<main>
+  <div class="login-bg">
+    <div style="position: relative;">
+      <div class="login-form">
+        <div>
+          <ul class="ul_type">
+            <li class="cur" data="0">
+              <b>会员登录</b>
+            </li>
+            <li class="cur">
+            </li>
+          </ul>
+        </div>
+        <div class="login-box">
+          <div class="msg-wrap">
+            <div class="msg-error" style="display: none;">账户名与密码不匹配，请重新输入</div>
+          </div>
+          <div class="mc">
+            <div class="form">
+              <form id="form-login" method="post" onsubmit="return false;">
+                <div class="item item-fore1">
+                  <label for="login-name" class="login-label name-label login-name-label"></label>
+                  <input id="login-name" type="text" class="itxt" name="login-name" tabindex="1" autocomplete="off"
+                         placeholder="邮箱/用户名/已验证手机">
+
+                </div>
+
+                <div id="entry" class="item item-fore2">
+                  <label class="login-label pwd-label login-pwd-label" for="login-pwd"></label>
+                  <input type="password" id="login-pwd" name="login-pwd" class="itxt" tabindex="2"
+                         autocomplete="off" placeholder="密码">
+                </div>
+                <div class="item item-fore5">
+                  <div class="login-btn">
+                    <a href="javascript:void(0);" class="btn-entry" id="login-submit" tabindex="6"
+                       style="outline: rgb(109, 109, 109) none 0px;">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- <div class="register_type quickLogin" style="margin:10px auto;">
+             <a href="javascript:void(0);">忘记密码？</a>
+             <span style=" color:#999999;"><b>|</b></span>
+             <a  id="jingtumLogin" target="_blank">井通帐号登录</a>
+             <span style=" color:#999999;"><b>|</b></span>
+             <a href="./register.html">免费注册</a>
+           </div>-->
+          <div class="row default-margin" style="text-align: right">
+            <a href="javascript:void(0);">忘记密码？</a>
+          </div>
+          <div class="row default-margin vertical-parent">
+            <span class="vertical-child">快速登录&nbsp;&nbsp;</span>
+            <a  id="login-jingtum" title="井通登录"
+               class="quick-login icon-jingtum vertical-child" ></a>
+            <a id="login-wechat" title="微信登录"
+               class="quick-login icon-weixin vertical-child"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+

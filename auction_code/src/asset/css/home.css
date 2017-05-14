@@ -1,0 +1,108 @@
+.main {
+  padding: 0;
+  width: 1180px;
+  margin: 0 auto;
+  margin-top: 106px;
+  min-height: 1500px;
+  /*width: 100%;*/
+  height: auto;
+  text-align: left;
+  z-index: 0;
+  /*background-color: #FFF;*/
+}
+
+.login_pre_list_table{
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
+  border-collapse:separate;
+  border-spacing:10px;
+}
+.login_pre_list_table tr {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.login_pre_list_img {
+  width: 120px;
+  height: 130px;
+  border: 0 solid transparent;
+  float: left;
+  margin: 10px auto;
+  margin-left: 30px;
+}
+
+.login_pre_list_text {
+  margin-left: 15px;
+  width: 540px;
+  float: right;
+  text-align: left;
+  font-size: 12px;
+}
+
+.login_pre_list_text ul li {
+  line-height: 24px;
+  padding-top: 5px;
+}
+.login_pre_list_title {
+  font-size: 14px;
+  font-weight: bold;
+}
+/*拍卖页*/
+.label-tag{
+  height: 34px;line-height: 36px;
+}
+.auction-list{
+   text-align: center;
+}
+
+.auction-list .auction-time-span{
+  background-color: #cccdcd;
+}
+.auction-list .title{
+  margin: 10px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+.auction-list .price{
+  height: 32px ;
+  line-height: 32px;
+  padding-left: 20px;
+  color: red;
+  font-size: 18px;
+}
+.auction-list .visit-count{
+  height: 32px ;
+  line-height: 32px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+.auction-list .status {
+/* background-color: red;*/
+  padding-right: 20px;
+}
+.auction-list .status .triangle-left{
+  display: inline-block;
+  width: 0;
+  height:0;
+  margin:0;padding: 0;
+  border: 5px solid transparent;
+  border-right: 5px solid red;
+}
+.auction-list .status .rectangle{
+  padding: 0;
+  margin-left: -5px;
+  display: inline-block;
+  background-color: red;
+  color:white;
+  height: 30px ;
+  width: 100px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+

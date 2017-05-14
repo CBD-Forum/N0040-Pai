@@ -1,0 +1,12 @@
+{
+  "server": {
+    "baseUrl": ""
+  },
+  "thirdParty":{
+    "jingtum":"http://120.24.221.115/oauth2/authorization?client_id=f1450890-c2f8-11e6-8734-6d09def7&redirect_uri=https://pai.skyfromwell.com/v1/access/jingtum/oauth2?next=https://pai.skyfromwell.com?type=1",
+    "weixin":"https://open.weixin.qq.com/connect/qrconnect?appid=wx2a5f1310f30260ec&redirect_uri=https%3a%2f%2fpai.skyfromwell.com%2fv1%2faccess%2fweixin%2foauth2%3fnext%3dhttps%3a%2f%2fpai.skyfromwell.com%3ftype%3d1&response_type=code&scope=snsapi_login&state=23132321#wechat_redirect"
+  },
+  "coins":{
+    "currency": "820000000F000020170017000000000020000001"
+  }
+}

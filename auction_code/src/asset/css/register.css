@@ -1,0 +1,51 @@
+
+body {
+  min-height: 100%;
+  background-image: none !important;
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+  width: 1180px;
+}
+
+main {
+  height: 500px;
+  text-align: left;
+  width: 100%;
+}
+
+.top {
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+}
+.top .title{
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+}
+.top .login{
+  float: right;
+  display: inline-block;
+}
+.top .login a{
+  color:#a60000;
+}
+.content{
+  margin-top: 30px;
+}
+.question-label{
+  height: 34px;line-height: 36px;
+  font-weight: normal !important;
+  font-size: 14px;
+}
+.default-margin{
+  margin:10px auto;
+}
+#validate-btn{
+  border:none;
+  outline-color: white;
+}
+#validate-btn:focus{
+  border:none;
+}

@@ -1,0 +1,2076 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a zeus-web-admin server.",
+    "version": "1.0.0",
+    "title": "Swagger routers",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "url": "http://swagger.io",
+      "name": "heipacker",
+      "email": "heipackermail@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:8888",
+  "basePath": "",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "user",
+      "description": "拍卖-用户相关接口"
+    },
+    {
+      "name": "goods",
+      "description": "拍卖-物品相关接口"
+    },
+    {
+      "name": "obj-store",
+      "description": "拍卖-对象存储相关接口"
+    },
+    {
+      "name": "expert",
+      "description": "社区-达人相关接口"
+    },
+    {
+      "name": "article",
+      "description": "社区-问答文章相关接口"
+    }
+  ],
+  "paths": {
+    "/v1/register": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "拍卖-注册接口",
+        "description": "",
+        "operationId": "/v1/register",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "注册的参数",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "拍卖-登录接口",
+        "description": "",
+        "operationId": "/v1/login",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "登录的参数",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/access/jingtum/oauth2": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "拍卖-井通app登录认证接口",
+        "description": "",
+        "operationId": "/v1/access/jingtum/oauth2",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "next",
+            "description": "后端跳转的页面(前端希望跳转的地址)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/logout": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "拍卖-登出接口",
+        "description": "",
+        "operationId": "/v1/logout",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/test": {
+      "get": {
+        "tags": [
+          "goods"
+        ],
+        "summary": "拍卖-测试接口",
+        "description": "",
+        "operationId": "/v1/test",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/goods": {
+      "post": {
+        "tags": [
+          "goods"
+        ],
+        "summary": "拍卖-添加拍卖商品接口",
+        "description": "这个接口一般需要先上传拍卖商品的图片@see /v1/obj-store接口",
+        "operationId": "/v1/goods",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "创建商品竞拍相关信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Goods"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "goods"
+        ],
+        "summary": "拍卖-获取拍卖商品接口",
+        "description": "",
+        "operationId": "/v1/goods",
+        "consumes": [
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "code",
+            "description": "商品代码",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Goods"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/goods/list": {
+      "get": {
+        "tags": [
+          "goods"
+        ],
+        "summary": "拍卖-获取拍卖商品列表接口",
+        "description": "",
+        "operationId": "/v1/goods/list",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/v1/auction-list": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "获取出价列表信息",
+        "description": "",
+        "operationId": "/v1/auction-list",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "code",
+            "description": "商品代码",
+            "required": true,
+            "type": ""
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "goods not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid code supplied"
+          }
+        }
+      }
+    },
+    "/v1/do-auction": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "参加竞拍接口",
+        "description": "",
+        "operationId": "/v1/do-auction",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "竞拍相关信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Auction"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "User not found"
+          },
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Invalid username supplied"
+          }
+        }
+      }
+    },
+    "/v1/end-auction": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "结束竞拍接口",
+        "description": "",
+        "operationId": "/v1/end-auction",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "goodsCode",
+            "description": "商品代码",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "url not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid goodsCode supplied"
+          }
+        }
+      }
+    },
+    "/v1/obj-store": {
+      "get": {
+        "tags": [
+          "obj-store"
+        ],
+        "summary": "下载对象信息",
+        "description": "",
+        "operationId": "/v1/obj-store",
+        "produces": [
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "对象id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "obj-store"
+        ],
+        "summary": "上传对象",
+        "description": "",
+        "operationId": "/v1/obj-store",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "fileName",
+            "description": "上传的文件名字, 尽量英文",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "file",
+            "description": "上传的文件",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "obj-store"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/obj-store",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/expertList": {
+      "get": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "获取达人列表",
+        "description": "",
+        "operationId": "/v1/expert",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/myExperts": {
+      "get": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "获取关注达人列表",
+        "description": "",
+        "operationId": "/v1/expert",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "username",
+            "description": "用户名",
+            "required": true,
+            "type": "string"
+          },{
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "int"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "int"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/expert": {
+      "get": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "获取达人信息",
+        "description": "",
+        "operationId": "/v1/expert",
+        "produces": [
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "达人id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "社区-创建达人信息接口",
+        "description": "",
+        "operationId": "/v1/expert",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "创建达人信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Expert"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "更新达人信息",
+        "description": "",
+        "operationId": "/v1/expert",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "创建达人信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Expert"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/expert",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/watch": {
+      "post": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "社区-加关注接口",
+        "description": "",
+        "operationId": "/v1/expert",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "关注信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Watch"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "expert"
+        ],
+        "summary": "取消关注",
+        "description": "",
+        "operationId": "/v1/expert",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "取消的关系id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/question": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取问题信息",
+        "description": "",
+        "operationId": "/v1/question",
+        "produces": [
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "问题id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "article"
+        ],
+        "summary": "社区-创建问题信息接口",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "创建达人信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "article"
+        ],
+        "summary": "更新问题信息",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "更新问题信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "article"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/myask/list": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取我的提问列表",
+        "description": "",
+        "operationId": "/v1/myask/list",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userid",
+            "description": "用户id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/answer": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取回答信息",
+        "description": "",
+        "operationId": "/v1/answer",
+        "produces": [
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "回答id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "article"
+        ],
+        "summary": "社区-回答问题接口",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "回答内容",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "article"
+        ],
+        "summary": "修改回答内容",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "更新问题信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "article"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/myask/list": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取我的提问列表",
+        "description": "",
+        "operationId": "/v1/myask/list",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userid",
+            "description": "用户id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/myquestion/list": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取我的提问列表",
+        "description": "",
+        "operationId": "/v1/myask/list",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userid",
+            "description": "用户id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/questions/list": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取已回答问题列表",
+        "description": "",
+        "operationId": "/v1/questions/list",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "userid",
+            "description": "用户id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "keyword",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "页数",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "单页大小",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/questions/view": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "获取已回答问题列表",
+        "description": "",
+        "operationId": "/v1/questions/view",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "问题id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "对象不存在"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/bookmark": {
+      "post": {
+        "tags": [
+          "article"
+        ],
+        "summary": "社区-收藏文章接口",
+        "description": "",
+        "operationId": "/v1/bookmark",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "收藏",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Bookmark"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "article"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/bookmark",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/articlegood": {
+      "post": {
+        "tags": [
+          "article"
+        ],
+        "summary": "社区-收藏文章接口",
+        "description": "",
+        "operationId": "/v1/articlegood",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "收藏",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ArticleGood"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "article"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/bookmark",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/comment": {
+      "post": {
+        "tags": [
+          "article"
+        ],
+        "summary": "社区-创建评论接口",
+        "description": "",
+        "operationId": "/v1/coment",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "创建评论",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ArticleComment"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "article"
+        ],
+        "summary": "更新评论",
+        "description": "",
+        "operationId": "/v1/comment",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "更新问题信息",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ArticleComment"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "article"
+        ],
+        "summary": "删除对象",
+        "description": "",
+        "operationId": "/v1/question",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "删除的文件名字",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid supplied"
+          }
+        }
+      }
+    },
+    "/v1/comments/list": {
+      "get": {
+        "tags": [
+          "article"
+        ],
+        "summary": "拍卖-获取评论列表接口",
+        "description": "",
+        "operationId": "/v1/comments/list",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "articleid",
+            "description": "文章id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Auction": {
+      "required": [
+        "goodsCode"
+      ],
+      "properties": {
+        "goodsCode": {
+          "type": "string",
+          "example": "商品代码",
+          "xml": {
+            "name": "goodsCode"
+          }
+        }
+      },
+      "xml": {
+        "name": "Auction"
+      }
+    },
+    "Goods": {
+      "required": [
+        "name",
+        "code",
+        "description",
+        "baseprice",
+        "fixincprice",
+        "bidinterval",
+        "totalauction",
+        "marketvalue",
+        "auctionValue"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "紫砂壶",
+          "xml": {
+            "name": "name"
+          }
+        },
+        "code": {
+          "type": "string",
+          "example": "zsh",
+          "xml": {
+            "name": "code"
+          }
+        },
+        "images": {
+          "type": "array",
+          "xml": {
+            "name": "image",
+            "wrapped": true
+          },
+          "items": {
+            "type": "string",
+            "example": "1285997748.jpg"
+          }
+        },
+        "description": {
+          "type": "string",
+          "example": "这是一个历史悠久的紫砂壶, 现在拍卖.",
+          "xml": {
+            "name": "description"
+          }
+        },
+        "starttime": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1481198211,
+          "xml": {
+            "name": "starttime"
+          }
+        },
+        "baseprice": {
+          "type": "integer",
+          "format": "int64",
+          "example": 150,
+          "xml": {
+            "name": "goodsname"
+          }
+        },
+        "fixincprice": {
+          "type": "integer",
+          "format": "int64",
+          "example": 5,
+          "xml": {
+            "name": "fixincprice"
+          }
+        },
+        "bidinterval": {
+          "type": "integer",
+          "format": "int64",
+          "example": 5,
+          "xml": {
+            "name": "bidinterval"
+          }
+        },
+        "totalauction": {
+          "type": "integer",
+          "format": "int64",
+          "example": 300,
+          "xml": {
+            "name": "totalauction"
+          }
+        },
+        "marketvalue": {
+          "type": "integer",
+          "format": "int64",
+          "example": 259,
+          "xml": {
+            "name": "marketvalue"
+          }
+        },
+        "auctionValue": {
+          "type": "integer",
+          "format": "int64",
+          "example": 151,
+          "xml": {
+            "name": "auctionValue"
+          }
+        }
+      },
+      "xml": {
+        "name": "Goods"
+      }
+    },
+    "User": {
+      "required": [
+        "username",
+        "password",
+        "confirmedPassword",
+        "phone",
+        "email",
+        "code"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "user001",
+          "xml": {
+            "name": "username"
+          }
+        },
+        "password": {
+          "type": "string",
+          "example": "123456",
+          "xml": {
+            "name": "password"
+          }
+        },
+        "confirmedPassword": {
+          "type": "string",
+          "example": "123456",
+          "xml": {
+            "name": "confirmedPassword"
+          }
+        },
+        "phone": {
+          "type": "string",
+          "example": "186600653783",
+          "xml": {
+            "name": "phone"
+          }
+        },
+        "email": {
+          "type": "string",
+          "example": "heipackermail@gmail.com",
+          "xml": {
+            "name": "email"
+          }
+        },
+        "code": {
+          "type": "string",
+          "example": "123245",
+          "xml": {
+            "name": "code"
+          }
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "Expert": {
+      "required": [
+        "username",
+        "expertname",
+        "companyname",
+        "title",
+        "questionprice",
+        "status"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "user001",
+          "xml": {
+            "name": "username"
+          }
+        },
+        "expertname": {
+          "type": "string",
+          "example": "用户001",
+          "xml": {
+            "name": "用户001"
+          }
+        },
+        "companyname": {
+          "type": "string",
+          "example": "测试公司",
+          "xml": {
+            "name": "测试公司"
+          }
+        },
+        "title": {
+          "type": "string",
+          "example": "吹牛大师",
+          "xml": {
+            "name": "吹牛大师"
+          }
+        },
+        "questionprice": {
+          "type": "int",
+          "example": 10,
+          "xml": {
+            "name": 10
+          }
+        },
+        "status": {
+          "type": "int",
+          "example": "0",
+          "xml": {
+            "name": 0
+          }
+        }
+      },
+      "xml": {
+        "name": "Expert"
+      }
+    },
+    "Watch": {
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "user001",
+          "xml": {
+            "name": "user001"
+          }
+        },
+        "expertid": {
+          "type": "int",
+          "example": 4,
+          "xml": {
+            "name": 4
+          }
+        }
+      },
+      "xml": {
+        "name": "Watch"
+      }
+    },
+    "Question": {
+      "required": [
+        "userid",
+        "expertid",
+        "price",
+        "content",
+        "status"
+      ],
+      "properties": {
+        "userid": {
+          "type": "integer",
+          "example": "1",
+          "xml": {
+            "name": "1"
+          }
+        },
+        "expertid": {
+          "type": "integer",
+          "example": "4",
+          "xml": {
+            "name": "4"
+          }
+        },
+        "price": {
+          "type": "integer",
+          "example": "100",
+          "xml": {
+            "name": "100"
+          }
+        },
+        "content": {
+          "type": "string",
+          "example": "井通币值什么时候可以到达1元？",
+          "xml": {
+            "name": "井通币值什么时候可以到达1元？"
+          }
+        },
+        "status": {
+          "type": "integer",
+          "example": "0",
+          "xml": {
+            "name": 0
+          }
+        }
+      },
+      "xml": {
+        "name": "Question"
+      }
+    },
+    "Answer": {
+      "required": [
+        "authorid",
+        "questionid",
+        "content",
+        "status"
+      ],
+      "properties": {
+        "authorid": {
+          "type": "integer",
+          "example": "4",
+          "xml": {
+            "name": "4"
+          }
+        },
+        "questionid": {
+          "type": "integer",
+          "example": "1",
+          "xml": {
+            "name": "4"
+          }
+        },
+        "content": {
+          "type": "string",
+          "example": "大约会是在冬季。",
+          "xml": {
+            "name": "大约会是在冬季。"
+          }
+        },
+        "status": {
+          "type": "integer",
+          "example": "0",
+          "xml": {
+            "name": 0
+          }
+        }
+      },
+      "xml": {
+        "name": "Question"
+      }
+    },
+    "Bookmark": {
+      "required": [
+        "userid",
+        "articleid"
+      ],
+      "properties": {
+        "userid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        },
+        "articleid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        }
+      },
+      "xml": {
+        "name": "Bookmark"
+      }
+    },
+    "ArticleGood": {
+      "required": [
+        "userid",
+        "articleid",
+        "type"
+      ],
+      "properties": {
+        "userid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        },
+        "articleid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        },
+        "type": {
+          "type": "integer",
+          "example": "1",
+          "xml": {
+            "name": "1"
+          }
+        }
+      },
+      "xml": {
+        "name": "ArticleGood"
+      }
+    },
+    "ArticleComment": {
+      "required": [
+        "userid",
+        "articleid",
+        "content"
+      ],
+      "properties": {
+        "userid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        },
+        "articleid": {
+          "type": "integer",
+          "example": "2",
+          "xml": {
+            "name": "2"
+          }
+        },
+        "content": {
+          "type": "string",
+          "example": "说的真好。",
+          "xml": {
+            "name": "说的真好。"
+          }
+        }
+      },
+      "xml": {
+        "name": "ArticleComment"
+      }
+    },
+    "Login": {
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "user001",
+          "xml": {
+            "name": "username"
+          }
+        },
+        "password": {
+          "type": "string",
+          "example": "123456",
+          "xml": {
+            "name": "password"
+          }
+        }
+      },
+      "xml": {
+        "name": "Login"
+      }
+    }
+  }
+}

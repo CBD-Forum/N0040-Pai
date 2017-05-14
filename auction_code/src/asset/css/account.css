@@ -1,0 +1,121 @@
+.main {
+  position: relative;
+  background: #ffffff;
+  min-height: 1000px;
+}
+
+nav .nav-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+nav .selected {
+  background-color: #a56322;
+  color: white;
+}
+
+.title {
+  border-bottom: 2px solid #ccc;
+}
+
+.subtitle {
+  border-bottom: 1px solid #eee;
+}
+
+.edit-btn {
+  color: #a56322;
+  border: none;
+  background-color: transparent;
+}
+
+.edit-btn:visited,
+.edit-btn:focus {
+  outline-color: white;
+  border: none;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.tabLabel {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 150px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  color: #95999F;
+  background-color: white;
+  border: 1px solid transparent;
+}
+
+.content {
+  display: none;
+  margin: 30px 0 0 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+
+#tab1:checked ~ #balance-body > #cur-balance-sheet,
+#tab2:checked ~ #balance-body > #pre-balance-sheet {
+  display: block;
+}
+
+#tab1, #tab2 {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabLabel:hover {
+  cursor: pointer;
+}
+
+#tab1:checked + .tabLabel, #tab2:checked + .tabLabel {
+  color: #a56322;
+  background-color: white;
+  border-top: 2px solid #a56322;
+}
+
+.content table {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc
+}
+.content table th{
+  background-color: #eee;
+}
+.content table th,
+.content table td {
+  border-left: 1px solid #ccc;
+}
+
+.withdraw{
+  line-height: 22px;
+  height: 22px;
+  color:#005EA7;
+}
+.withdraw:link{
+  color:#005EA7;
+}
+.withdraw:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color:#005EA7;
+}
+.withdraw:hover{
+  color:red;
+}

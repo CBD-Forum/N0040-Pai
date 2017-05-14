@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>订单确认</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./asset/icon/favicon-32x32.png">
+
+</head>
+<body>
+<header class="header"></header>
+<main class="main-panel main" style="padding: 0 5px;">
+  <div class="row default-margin text-left order-footer">
+    <div class="row default-margin">
+      <h4 style="font-weight: bold;">选择收货地址</h4>
+    </div>
+    <div class="row default-margin order-item ">
+      <div class="col-md-10 vertical-child">
+        <div class="row" id="add-list">
+        </div>
+        <div class="vertical-parent" style="cursor: pointer;" id="expand-add">
+          <span class="vertical-child">展开地址</span>
+          <span class="glyphicon glyphicon-chevron-down vertical-child"></span>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <span class="btn-action" id="add-new-add">新增收获地址</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row default-margin text-left order-footer">
+    <h4 style="font-weight: bold;">确认订单信息</h4>
+    <div class="row default-margin">
+      <table class="table" id="trade-list">
+        <thead>
+        <tr>
+          <th class="col-md-6" style="border: none;">
+            订单详情
+          </th>
+          <th class="col-md-2 text-center" style="border: none;">单价</th>
+          <th class="col-md-2 text-center" style="border: none;">数量</th>
+          <th class="col-md-2 text-center" style="border: none;">实际付款</th>
+        </tr>
+
+        </thead>
+        <tbody id='trade1'>
+        <tr style="height: 20px;border: none;">
+        </tr>
+
+        <tr style="border:1px solid #ccc;border-radius:5px;text-align: left; margin:10px auto;">
+          <td>
+            <div class="row col-md-2" style="width: 100px;">
+              <a href="javascript:void(0);">
+                <img src="//img.alicdn.com/bao/uploaded/i2/T1ZC9TXndcXXb0imPb_125240.jpg_80x80.jpg">
+              </a>
+            </div>
+            <div class="col-md-10">湖北移动话费充值30元快充 手机话费充值 自动充值 即时到帐</div>
+          </td>
+          <td class="text-center">￥300.00</td>
+          <td class="row default-margin text-center">
+
+            <input type="button" value="-" class="col-md-2 text-center" style="padding:0;"/>
+            <input type="number" value="1" title="数量" min="1" class="col-md-8 text-center" style="margin: 0;padding: 0;"/>
+            <input type="button" value="+" class="col-md-2 text-center" style=" padding:0 ;"/>
+          </td>
+          <td class="text-center">
+            <div class="row" style="color: red;">
+              ￥910.00
+            </div>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+  <div class="row default-margin text-right">
+    <input class="btn-metro" id="submit-ensure" value="提交订单" readonly="readonly" title="提交订单"
+           style="height: 40px; cursor:pointer;font-size: 18px;"/>
+  </div>
+</main>
+<footer class="footer"></footer>
+</body>
+</html>

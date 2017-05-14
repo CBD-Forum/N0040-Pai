@@ -1,0 +1,56 @@
+<div class="row default-margin" style="margin-top: 20px;">
+  <div class="col-md-8" style="font-size: 16px;">
+    <span>可用余额：</span>
+    <font color="red" id="lbl-balance">0.00</font>
+    <a href="./withdraw.html" target="_blank" class="withdraw">&nbsp;&nbsp;转出</a>
+  </div>
+ <div class="col-md-4 text-right">
+
+ </div>
+</div>
+
+<div class="row default-margin" style="font-size: 0;text-align: left;margin-top: 20px;">
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label class="tabLabel " for="tab1">近三个月收支明细</label>
+  <input id="tab2" type="radio" name="tabs">
+  <label class="tabLabel " for="tab2">三个月前收支明细</label>
+
+  <div id="balance-body">
+    <div id="cur-balance-sheet" class="content">
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="col-md-3 text-center">时间</th>
+          <th class="col-md-3 text-center">存入</th>
+          <th class="col-md-3 text-center">支出</th>
+          <th class="col-md-3 text-center">备注</th>
+        </tr>
+
+        </thead>
+        <tbody id='cur-balance-sheet1'>
+
+
+        </tbody>
+
+      </table>
+    </div>
+    <div id="pre-balance-sheet" class="content">
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="col-md-3 text-center">时间</th>
+          <th class="col-md-3 text-center">存入</th>
+          <th class="col-md-3 text-center">支出</th>
+          <th class="col-md-3 text-center">备注</th>
+        </tr>
+
+        </thead>
+        <tbody id='pre-balance-sheet2'>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,1 @@
+function filterTransaction(b){if(!b||b.memos.length<1||b.type!="received"){return false}var a=b.memos[0];if(a.MemoType!="string"){return false}return JSON.parse(a.MemoData).trans_type==AuctionConfig.transType};

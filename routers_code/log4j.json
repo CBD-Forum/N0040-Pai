@@ -1,0 +1,15 @@
+{
+  "appenders": [
+    {
+      "type": "console"
+    },
+    {
+      "type": "file",
+      "level": "INFO",
+      "filename": "routers.log",
+      "maxLogSize": 204800000,
+      "backups": 3
+    }
+  ],
+  "replaceConsole": true
+}
