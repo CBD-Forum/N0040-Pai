@@ -16,7 +16,7 @@
     "cookie-parser": "~1.0.1",
     "cookie-session": "~1.2.0",
     "debug": "~2.6.9",
-    "ejs": "~2.5.5",
+    "ejs": "~3.1.7",
     "express": "~4.17.3",
     "express-domain-middleware": "^0.1.0",
     "express-ipv4": "0.0.1",
